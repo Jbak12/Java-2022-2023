@@ -1,3 +1,4 @@
+// tester ukradziony z innego repo hehe
 public class Main {
 
     public static byte[][] input = {
@@ -86,7 +87,8 @@ public class Main {
                     decoder.reset();
                 } else if (input[i][j] == '#') {
 
-                    String output = decoder.output();
+                    String output = decoder.
+                            output();
 
                     if (output.equals(expectedOutput[currentTest])) {
                         System.out.println("Test nr " + (currentTest + 1) + " zaliczony!");
