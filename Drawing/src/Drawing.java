@@ -16,41 +16,23 @@ public class Drawing implements  SimpleDrawing {
                 i = 0;
             }
         }
-        geometry = input;
+        xCoordinate = input.getInitialFirstCoordinate();
+        yCoordinate = input.getInitialSecondCoordinate();
+
     }
 
     @Override
     public void draw(Segment segment) {
         switch (segment.getDirection()) {
             case 1:
-                for(int i = xCoordinate; i < xCoordinate + segment.getLength(); i++ ){
+                int x = xCoordinate;
+                for(int i = x; i < x + segment.getLength(); i++ ){
                     if( i < painting.length) {
                         painting[i][yCoordinate] = segment.getColor();
                         xCoordinate = i;
                     } else { break; }
                 }
-            case 2:
-                for(int i = yCoordinate; i < yCoordinate + segment.getLength(); i++ ){
-                    if( i < painting.length) {
-                        painting[xCoordinate][i] = segment.getColor();
-                        yCoordinate++;
-                    } else { break; }
-                }
-            case -1:
-                for(int i = xCoordinate; i > xCoordinate - segment.getLength(); i-- ){
-                    if (i > 0 ){
-                        painting[i][yCoordinate] = segment.getColor();
-                        xCoordinate--;
-                    } else { break; }
 
-                }
-            case -2:
-                for(int i = yCoordinate; i > yCoordinate - segment.getLength(); i-- ){
-                    if( i > 0 ) {
-                        painting[xCoordinate][i] = segment.getColor();
-                        yCoordinate--;
-                    } else { break; }
-                }
         }
     }
 
