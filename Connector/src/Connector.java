@@ -1,14 +1,7 @@
 import java.io.*;
 import java.net.*;
-import java.util.Objects;
-import java.lang.Object;
-import java.lang.InterruptedException;
 
 public class Connector implements NetConnection {
-
-    void sent(PrintWriter out, int result ) throws IOException {
-        out.println(result);
-    }
 
     @Override
     public void connect(String host, int port) {
@@ -36,12 +29,12 @@ public class Connector implements NetConnection {
                 }
                 count = count + 1;
             }
-            sent(out,result);
-            System.out.println("Znaleziono " + result + " liczby " + lookingFor);
+            out.println(result);
+            // // System.out.println("Znaleziono " + result + " liczby " + lookingFor);
 
-            while((sLine = in.readLine()) != null){
-                System.out.println("Feedback: " + sLine);
-            }
+            // while((sLine = in.readLine()) != null){
+            //     System.out.println("PO PROGRAMIE: " + sLine);
+            // }
 
             in.close();
             out.close();
