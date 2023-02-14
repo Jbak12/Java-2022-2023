@@ -1,8 +1,11 @@
+import java.util.Set;
+
 /**
  * Interfejs systemu akukcyjnego
  *
  */
 public interface Aukcja {
+
 
 	/**
 	 * Interfejs reprezentujący przedmiot aukcji.
